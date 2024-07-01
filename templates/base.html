@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block titulo %}
+        Administración Tipo de Sabores
+        {% endblock titulo %}
+    </title>
+</head>
+<body class="color3">
+    
+    <header class="color1">
+        <h1><a href="{{ url_for('inicio') }}">Administración Tipo de Sabores</a></h1>
+        <nav>
+            <img class="menuBurger" src="{{ url_for('static', filename='./media/icon/bars-solid.svg') }}" alt="Ménu para dispositivos móviles" title="Menú">
+            <div id="menuPpal" class="oculto visibleH">
+                <a href="{{ url_for('Menu') }}" class="menuSPA color1">Cursos</a>
+                <a href="{{ url_for('Comentarios') }}" class="menuSPA color1">Docentes</a>
+            </div>
+        </nav>
+    </header>
+
+        <main class="color3">
+            <section id="contenidoSPA">
+                <!-- Contenido dinámico -->
+                {% block contenido %}
+                <h2 class="color5">Acerca del Proyecto EdTech</h2>
+                <div class="articulos unaColumna">
+                    <article>
+                        <p>Este sitio fué desarrollado como guía para el curso de <b>Python Fullstack</b> del programa Codo a Codo.</p>
+                        <p>Información disponible y funcionalidad:</p>
+                        <ul>
+                            <li>- Sitio simil «back office»;</li>
+                            <li>- API pública y con conexión para el frontend desarrollado.</li>
+                        </ul>
+                    </article>
+                </div>
+                {% endblock contenido %}
+            </section>
+        </main>
+      
+        
+        <footer class="color1">
+            <p>Sitio sin licencia - 2024</p>
+            <p>Creado con fines educativos por Christian Toledo</p>
+            <p>
+                <a class="linksCH logo" href="https://chtole.pythonanywhere.com/" target="_blank">
+                    <img src="{{ url_for('static', filename='./media/img/enlacesIco/enlace-web.png') }}" alt="WebSite" class="logo">
+                </a>
+                <a class="linksCH logo" href="https://github.com/ChTole" target="_blank">
+                    <img src="{{ url_for('static', filename='./media/img/enlacesIco/githubIco.png') }}" alt="GitHub" class="logo">
+                </a>
+                <a class="linksCH logo" href="https://www.linkedin.com/in/christianarieltoledo/" target="_blank">
+                    <img src="{{ url_for('static', filename='./media/img/enlacesIco/linkedin.png') }}" alt="LinkedIn" class="logo">
+                </a>
+            </p>
+        </footer>
+    
+        {% block js %}
+        
+        <script src="{{ url_for('static', filename='./js/main.js') }}" type="module"></script>
+        
+        {% endblock js %}
+    
+</body>
+</html>
